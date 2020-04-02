@@ -33,7 +33,7 @@ export class MemberEditComponent implements OnInit {
     this.authService.currentPhotoUrl.subscribe(photoUrl => this.photoUrl = photoUrl);
   }
 
-  updateUser(){
+  updateUser() {
     console.log('id: ' + this.authService.decodedToken.namedid);
     this.userService.updateUser(this.authService.decodedToken.nameid, this.user).subscribe(next => {
       this.alertify.success('Profile updated successfully.');
@@ -43,7 +43,7 @@ export class MemberEditComponent implements OnInit {
     });
   }
 
-  updateMainphoto(photoUrl){
+  updateMainphoto(photoUrl) {
     this.user.photoUrl = photoUrl;
   }
 }
